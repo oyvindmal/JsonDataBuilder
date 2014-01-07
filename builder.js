@@ -26,7 +26,10 @@ $(document).ready(
 		$("#btnImport").click(
 			function() 
 			{
-				showModal("Import JSON", "TODO: implement import", null);
+				var test = $("<button />");
+				test.click(function () { alert("success");});	
+				test.html("Click me");
+				showModal("Import JSON", test, null);
 			});	
 		function showModal(title, dataobject, callback)
 		{
