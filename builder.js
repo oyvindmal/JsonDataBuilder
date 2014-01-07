@@ -26,11 +26,26 @@ $(document).ready(
 		$("#btnImport").click(
 			function() 
 			{
-				var test = $("<button />");
-				test.click(function () { alert("success");});	
-				test.html("Click me");
-				showModal("Import JSON", test, null);
-			});	
+				var importContainer = $("<div />");
+				var importArea = $("<textarea />");
+				var importButton = $("<button />");
+				importButton.text("Import");
+				importButton.click(
+				function () 
+				{ 
+					importCallback(importArea.val());  
+				});
+				
+				importArea.appendTo(importContainer);
+				importButton.appendTo(importContainer);
+				showModal("Import JSON", importContainer, importCallback);
+			});
+
+		function importCallback(data)
+		{
+			console.log("importCallback");
+			console.log(data);
+		}	
 		function showModal(title, dataobject, callback)
 		{
 			var modalBackground = $("<div />");
