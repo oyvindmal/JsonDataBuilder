@@ -10,6 +10,12 @@ $(document).ready(
 			$("#output").text(JSON.stringify(workingObject));
 		});
 		
+		$("#textmodal").click(
+		function ()
+		{
+			showModal("Test", "Little bit more of testing", function () {});
+		});
+
 		$("#modal").click(
 			function () 
 			{
@@ -62,7 +68,15 @@ $(document).ready(
 			heading.text(title);
 			var content = $("<div />");
 			content.addClass("modalContent");
-			dataobject.appendTo(content);
+			if(dataobject.jquery)
+			{
+				dataobject.appendTo(content);
+			}
+
+			else 
+			{
+				content.html(dataobject);
+			}
 			btn.appendTo(modal);
 			heading.appendTo(modal);
 			content.appendTo(modal);
