@@ -18,9 +18,11 @@ $(document).ready(
 
 		function showModal()
 		{
-			var obj = $("<div />");
-			obj.addClass("modal");
-
-			obj.appendTo("body");
+			var modalBackground = $("<div />");
+			modalBackground.addClass("modalBackground");
+			var modal = $("<div />");
+			modal.addClass("modal");
+			modal.appendTo(modalBackground);
+			modalBackground.appendTo("body");
 		}
 	});
