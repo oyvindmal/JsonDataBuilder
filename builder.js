@@ -19,7 +19,7 @@ $(document).ready(
 		function showModal()
 		{
 			var obj = $("<div />");
-			obj.addClass("modalBack");
+			obj.addClass("modal");
 
 			obj.appendTo("body");
 		}
