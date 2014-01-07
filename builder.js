@@ -14,9 +14,9 @@ $(document).ready(
 			$("#output").text(JSON.stringify(temp));
 		});
 		
-		$("#modal").click(function () { showModal("lol");});
+		$("#modal").click(function () { showModal("lol", function () { alert("Modal is live");  });});
 
-		function showModal(stringdata)
+		function showModal(stringdata, callback)
 		{
 			var modalBackground = $("<div />");
 			modalBackground.addClass("modalBackground");
@@ -37,5 +37,7 @@ $(document).ready(
 			content.appendTo(modal);
 			modal.appendTo(modalBackground);
 			modalBackground.appendTo("body");
+
+			callback();
 		}
 	});
