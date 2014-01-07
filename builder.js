@@ -2,16 +2,12 @@ $(document).ready(
 	function () 
 	{
 	
-		var temp = 
-		{
-			"foo" : "bar",
-			"bar" : "foo"
-		}
+		var workingObject;
 
 		
 		$("#test").click(function()
 		{
-			$("#output").text(JSON.stringify(temp));
+			$("#output").text(JSON.stringify(workingObject));
 		});
 		
 		$("#modal").click(
@@ -46,6 +42,7 @@ $(document).ready(
 		{
 			console.log("importCallback");
 			console.log("Got data: " + data);
+			workingObject = (jQuery.parseJSON(data));
 		}	
 		function showModal(title, dataobject, callback)
 		{
