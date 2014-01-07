@@ -49,7 +49,20 @@ $(document).ready(
 			console.log("importCallback");
 			console.log("Got data: " + data);
 			workingObject = (jQuery.parseJSON(data));
-		}	
+			CreateJsonTree();
+		}
+
+		function CreateJsonTree()
+		{
+			var jsoncontent = $("<pre />");
+
+			jsoncontent.text(JSON.stringify(workingObject));
+			
+			var container = $("#jsonTreeView");
+			container.html("");
+			
+			jsoncontent.appendTo(container);	
+		}
 		function showModal(title, dataobject, callback)
 		{
 			var modalBackground = $("<div />");
