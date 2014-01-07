@@ -1,5 +1,16 @@
 $(document).ready(
 	function () 
 	{
-		alert("lol");
+	
+		var temp = 
+		{
+			"foo" : "bar",
+			"bar" : "foo"
+		}
+
+		
+		$("#test").click(function()
+		{
+			$("#output").text(JSON.stringify(temp));
+		});
 	});
