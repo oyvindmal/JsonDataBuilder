@@ -22,6 +22,15 @@ $(document).ready(
 			modalBackground.addClass("modalBackground");
 			var modal = $("<div />");
 			modal.addClass("modal");
+			
+			var btn = $("<button />");
+			btn.text("Close");
+			btn.click(
+			function ()
+			{
+				$(".modalBackground").remove();
+			});
+			btn.appendTo(modal);
 			modal.appendTo(modalBackground);
 			modalBackground.appendTo("body");
 		}
