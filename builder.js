@@ -13,4 +13,14 @@ $(document).ready(
 		{
 			$("#output").text(JSON.stringify(temp));
 		});
+		
+		$("#modal").click(function () { showModal();});
+
+		function showModal()
+		{
+			var obj = $("<div />");
+			obj.addClass("modalBack");
+
+			obj.appendTo("body");
+		}
 	});
