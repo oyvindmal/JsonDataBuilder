@@ -34,17 +34,18 @@ $(document).ready(
 				function () 
 				{ 
 					importCallback(importArea.val());  
+					closeModals();
 				});
 				
 				importArea.appendTo(importContainer);
 				importButton.appendTo(importContainer);
-				showModal("Import JSON", importContainer, importCallback);
+				showModal("Import JSON", importContainer, function () {});
 			});
 
 		function importCallback(data)
 		{
 			console.log("importCallback");
-			console.log(data);
+			console.log("Got data: " + data);
 		}	
 		function showModal(title, dataobject, callback)
 		{
@@ -57,8 +58,8 @@ $(document).ready(
 			btn.text("Close");
 			btn.click(
 			function ()
-			{
-				$(".modalBackground").remove();
+		{
+			closeModals();
 			});
 			var heading = $("<h3 />");
 			heading.text(title);
@@ -72,5 +73,10 @@ $(document).ready(
 			modalBackground.appendTo("body");
 
 			callback();
+		}
+
+		function closeModals()
+		{
+			 $(".modalBackground").remove();
 		}
 	});
