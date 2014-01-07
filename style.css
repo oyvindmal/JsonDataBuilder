@@ -25,5 +25,17 @@ body
 	top:25%;
 	right:35%;
 	width:400px;
-	height:250px;
+	
+	font-size:0.8em;
+}
+
+.modal h3
+{
+	padding:2px 5px 2px 5px;
+}
+
+.modalContent 
+{
+	padding:5px;
+	width:390px;
 }
