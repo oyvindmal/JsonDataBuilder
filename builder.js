@@ -51,7 +51,7 @@ $(document).ready(
 			workingObject = (jQuery.parseJSON(data));
 
 			console.log(workingObject);
-			if(workingObject instanceof Array)
+	/*		if(workingObject instanceof Array)
 			{
 				console.log("its array");
 			}
@@ -60,19 +60,51 @@ $(document).ready(
 				console.log("not array presumable object");
 			}				
 //			$.each(workingObject, function () {console.log(this)});
+*/
 			CreateJsonTree();
 		}
 
 		function CreateJsonTree()
 		{
-			var jsoncontent = $("<pre />");
+			//Create containing object
 
-			jsoncontent.text(JSON.stringify(workingObject));
 			
-			var container = $("#jsonTreeView");
-			container.html("");
+	
+
+			//Append object to container in dom	
+		}
+
+		function CreateJsonObjectTree(dataobj) 
+		{
+			// Create objecttree element
+
 			
-			jsoncontent.appendTo(container);	
+			// IF array
+
+			// Call CreateJsonArrayTree
+
+			// IF objectvalue
+			
+			// Create list item
+			
+			// return jquery element
+
+	
+		}
+
+		function CreateJsonArrayTree(dataArray)
+		{
+			// create arraytree container element
+
+			// IF array
+
+			// create value
+
+			// IF object
+
+			// CALL CreateJsonbObjectTree
+
+			// return jquyer element	
 		}
 		function showModal(title, dataobject, callback)
 		{
