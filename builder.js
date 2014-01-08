@@ -49,6 +49,17 @@ $(document).ready(
 			console.log("importCallback");
 			console.log("Got data: " + data);
 			workingObject = (jQuery.parseJSON(data));
+
+			console.log(workingObject);
+			if(workingObject instanceof Array)
+			{
+				console.log("its array");
+			}
+			else
+			{
+				console.log("not array presumable object");
+			}				
+//			$.each(workingObject, function () {console.log(this)});
 			CreateJsonTree();
 		}
 
