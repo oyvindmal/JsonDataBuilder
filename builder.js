@@ -1,4 +1,4 @@
-$(document).ready(
+$q(document).ready(
 	function () 
 	{
 	
@@ -51,61 +51,43 @@ $(document).ready(
 			workingObject = (jQuery.parseJSON(data));
 
 			console.log(workingObject);
-	/*		if(workingObject instanceof Array)
-			{
-				console.log("its array");
-			}
-			else
-			{
-				console.log("not array presumable object");
-			}				
-//			$.each(workingObject, function () {console.log(this)});
-*/
 			CreateJsonTree();
 		}
 
 		function CreateJsonTree()
 		{
-			//Create containing object
+			var container = $("<ul />");
+
+			var output;
+			
+			if(workingObject instanceof Array)
+                        {
+                        	output = CreateJsonArrayTree(workingObject);        
+                        }
+                        else
+                        {
+                               output = CreateJsonObjectTree(workingObject);
+                        }
 
 			
-	
-
-			//Append object to container in dom	
+			output.appendTo($("#jsonTreeView"));
 		}
 
-		function CreateJsonObjectTree(dataobj) 
+		function CreateJsonObjectTree(dataObject) 
 		{
-			// Create objecttree element
-
-			
-			// IF array
-
-			// Call CreateJsonArrayTree
-
-			// IF objectvalue
-			
-			// Create list item
-			
-			// return jquery element
-
-	
+			return $("<li />").html("lol object");
 		}
 
 		function CreateJsonArrayTree(dataArray)
 		{
-			// create arraytree container element
-
-			// IF array
-
-			// create value
-
-			// IF object
-
-			// CALL CreateJsonbObjectTree
-
-			// return jquyer element	
+			return $("<li />".html("lol array");
 		}
+
+		function CreateJsonElement(dataElement)
+		{
+
+		}
+
 		function showModal(title, dataobject, callback)
 		{
 			var modalBackground = $("<div />");
