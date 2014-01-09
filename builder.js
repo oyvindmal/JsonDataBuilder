@@ -1,4 +1,4 @@
-$q(document).ready(
+$(document).ready(
 	function () 
 	{
 	
@@ -69,18 +69,21 @@ $q(document).ready(
                                output = CreateJsonObjectTree(workingObject);
                         }
 
-			
-			output.appendTo($("#jsonTreeView"));
+			output.appendTo(container);
+			$("#jsonTreeView").html("");
+			container.appendTo($("#jsonTreeView"));
 		}
 
 		function CreateJsonObjectTree(dataObject) 
 		{
-			return $("<li />").html("lol object");
+			var temp = $("<li />").html("Object");
+                        return temp;
 		}
 
 		function CreateJsonArrayTree(dataArray)
 		{
-			return $("<li />".html("lol array");
+			var temp = $("<li />").html("Array");
+			return temp;
 		}
 
 		function CreateJsonElement(dataElement)
